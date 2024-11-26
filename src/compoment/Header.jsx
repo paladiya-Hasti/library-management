@@ -4,33 +4,67 @@ import SignUpModal from './SignupModel';
 import logo1 from '../assest/img/logo1.webp'
 
 const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true); // State to control the modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const navigate = useNavigate();
 
   const handleSignUpClick = () => {
-    setIsModalOpen(true); // Open the sign-up modal when Sign Up is clicked
+    setIsModalOpen(true); 
   };
 
   return (
     <div>
-      <header className="bg-blue-600 text-white py-4 px-6 flex justify-between">
-        <img src={logo1} alt="" />
-        
-        <nav className='p-3'>
-          <input type="text" placeholder="Search" className="px-4 p-1" />
-          <Link to="/" className="px-4">Home</Link>
-          <Link to="/add" className="px-4">Add Book</Link>
-          <button onClick={handleSignUpClick} className="px-4">Sign Up</button>
-        </nav>
-      </header>
-
-      {/* Conditional rendering of SignUpModal */}
-      {isModalOpen && <SignUpModal onClose={() => setIsModalOpen(true)} onSignUp={() => { 
-        setIsModalOpen(false);
-        navigate('/');
-        alert("signup succefull") // Navigate to Home page after successful sign-up
-      }} />}
-    </div>
+    <header className="bg-blue-600 text-white py-4 px-6 flex items-center justify-between">
+      {/* Logo */}
+      <img src={logo1} alt="Logo" className="h-8" />
+  
+      {/* Navigation */}
+      <nav className="flex items-center space-x-4">
+        {/* Search input */}
+        <input
+          type="text"
+          placeholder="Search"
+          className="px-4 py-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500 hidden sm:block"
+        />
+  
+        {/* Navigation Links */}
+        <div className="hidden sm:flex space-x-4">
+          <Link to="/" className="px-4 text-white hover:text-gray-300">
+            Home
+          </Link>
+          <Link to="/add" className="px-4 text-white hover:text-gray-300">
+            Add Book
+          </Link>
+          <button
+            onClick={handleSignUpClick}
+            className="px-4 text-white hover:text-gray-300"
+          >
+            Sign Up
+          </button>
+        </div>
+  
+        {/* Hamburger menu for mobile */}
+        <div className="sm:hidden">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="text-white">
+            <i className="fas fa-bars"></i> {/* Use an icon library like FontAwesome */}
+          </button>
+        </div>
+      </nav>
+    </header>
+  
+    {isModalOpen && (
+      <SignUpModal
+        onClose={() => setIsModalOpen(false)}
+        onSignUp={() => {
+          setIsModalOpen(false);
+          navigate('/');
+          alert('Signup successful');
+        }}
+      />
+    )}
+  </div>
+  
   );
 };
 

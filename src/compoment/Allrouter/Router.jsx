@@ -13,8 +13,9 @@ const Router = () => {
   
   return (
     <div>
-     <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto p-4">
+    <div className="bg-gray-50 min-h-screen">
+      {/* Main content container with responsive max width */}
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 lg:p-10">
         <Routes>
           <Route path="/" element={<BookList books={books} />} />
           <Route path="/add" element={<BookForm onSubmit={handleAddBook} />} />
@@ -23,7 +24,7 @@ const Router = () => {
         </Routes>
       </div>
     </div>
-    </div>
+  </div>
   )
 }
 

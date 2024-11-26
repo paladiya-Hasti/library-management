@@ -5,7 +5,7 @@ import Header from './compoment/Header';
 
 import Footer from './compoment/Footer';
 import BookList from './compoment/BookList';
-// import BookDetails from './pages/BookDetails';
+
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -17,7 +17,7 @@ const App = () => {
       <Header />
       
       <div className="max-w-4xl mx-auto p-6">
-        {/* <BookForm onSubmit={handleAddBook} /> */}
+
       </div>
       
       <div className="max-w-6xl mx-auto p-6">

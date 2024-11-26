@@ -50,22 +50,23 @@ const BookDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <img
-        src={book.cover}
-        alt={book.title}
-        className="w-full h-96 object-cover rounded-md mb-6 sm:h-72 md:h-96"
-      />
-      <h2 className="text-3xl font-semibold text-gray-800 mb-2">{book.title}</h2>
-      <p className="text-lg text-gray-500 mb-1">Author: {book.author}</p>
-      <p className="text-lg text-gray-400 mb-1">Genre: {book.genre}</p>
-      <p className="text-lg text-gray-400 mb-1">Published: {book.publicationDate}</p>
-      <p className="text-lg text-gray-600 mt-4">{book.summary}</p>
-      <button
-        className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-      >
-        Borrow
-      </button>
-    </div>
+    <img
+      src={book.cover}
+      alt={book.title}
+      className="w-full h-72 object-cover rounded-md mb-6 sm:h-72 md:h-96"
+    />
+    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-2">{book.title}</h2>
+    <p className="text-base sm:text-lg text-gray-500 mb-1">Author: {book.author}</p>
+    <p className="text-base sm:text-lg text-gray-400 mb-1">Genre: {book.genre}</p>
+    <p className="text-base sm:text-lg text-gray-400 mb-1">Published: {book.publicationDate}</p>
+    <p className="text-base sm:text-lg text-gray-600 mt-4">{book.summary}</p>
+    <button
+      className="mt-6 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200 w-full sm:w-auto"
+    >
+      Borrow
+    </button>
+  </div>
+  
   );
 };
 
